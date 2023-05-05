@@ -30,7 +30,7 @@ impl WasmPitchDetector {
     }
 
     pub fn detect_pitch(&mut self, audio_samples: &[f32]) -> f32 {
-        if (audio_samples.len() != self.fft_size) {
+        if audio_samples.len() != self.fft_size {
             panic!(
                 "Insufficient samples for buffer size. Expected {} samples, got {}",
                 self.fft_size,
